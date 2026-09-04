@@ -1,0 +1,1144 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: white;
+
+    overflow-x: hidden;
+
+    /* BACKGROUND */
+
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+
+    position: fixed;
+
+    top: 18px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(94%, 1100px);
+
+    min-height: 72px;
+
+    padding: 10px 12px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.14);
+
+    backdrop-filter:
+        blur(30px)
+        saturate(180%);
+
+    -webkit-backdrop-filter:
+        blur(30px)
+        saturate(180%);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.30);
+
+    border-radius: 24px;
+
+    box-shadow:
+
+        0 15px 40px
+        rgba(0, 0, 0, 0.25),
+
+        inset 0 1px 1px
+        rgba(255, 255, 255, 0.55);
+
+    z-index: 9999;
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.logo {
+
+    padding: 0 14px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    white-space: nowrap;
+}
+
+.logo span {
+
+    color: #8edcff;
+
+    text-shadow:
+        0 0 12px
+        rgba(100, 210, 255, 0.9);
+}
+
+
+/* ========================================
+   SEARCH
+======================================== */
+
+.search-box {
+
+    flex: 1;
+
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 14px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.25);
+
+    border-radius: 16px;
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+    transition:
+        0.3s ease;
+}
+
+.search-box:focus-within {
+
+    background:
+        rgba(255, 255, 255, 0.25);
+
+    transform:
+        scale(1.02);
+
+    box-shadow:
+        0 0 25px
+        rgba(255, 255, 255, 0.15);
+}
+
+.search-box span {
+
+    font-size: 26px;
+
+    margin-right: 8px;
+}
+
+.search-box input {
+
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+.search-box input::placeholder {
+
+    color:
+        rgba(255, 255, 255, 0.75);
+}
+
+
+/* ========================================
+   MENU BUTTON
+======================================== */
+
+.menu-button {
+
+    width: 52px;
+    height: 52px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255, 255, 255, 0.16);
+
+    backdrop-filter:
+        blur(15px);
+
+    -webkit-backdrop-filter:
+        blur(15px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    transition:
+        0.3s ease;
+}
+
+.menu-button:hover {
+
+    background:
+        rgba(255, 255, 255, 0.30);
+}
+
+.menu-button span {
+
+    width: 23px;
+    height: 2px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    transition:
+        0.3s ease;
+}
+
+
+/* ========================================
+   MENU DROPDOWN
+======================================== */
+
+.nav-menu {
+
+    position: absolute;
+
+    top: 82px;
+    right: 0;
+
+    width: 230px;
+
+    padding: 10px;
+
+    list-style: none;
+
+    background:
+        rgba(25, 25, 35, 0.58);
+
+    backdrop-filter:
+        blur(30px)
+        saturate(160%);
+
+    -webkit-backdrop-filter:
+        blur(30px)
+        saturate(160%);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.25);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.30);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(-10px)
+        scale(0.95);
+
+    transition:
+        0.25s ease;
+}
+
+.nav-menu.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.nav-menu li a {
+
+    display: block;
+
+    padding: 13px 15px;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 13px;
+
+    transition:
+        0.2s ease;
+}
+
+.nav-menu li a:hover {
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    transform:
+        translateX(3px);
+}
+
+
+/* ========================================
+   SOSIAL MEDIA
+======================================== */
+
+.social-title {
+
+    padding:
+        12px 15px 5px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.55;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        130px 20px 60px;
+}
+
+.hero-card {
+
+    width:
+        min(90%, 750px);
+
+    padding:
+        55px 40px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.13);
+
+    backdrop-filter:
+        blur(25px)
+        saturate(150%);
+
+    -webkit-backdrop-filter:
+        blur(25px)
+        saturate(150%);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.28);
+
+    border-radius: 32px;
+
+    box-shadow:
+
+        0 25px 60px
+        rgba(0, 0, 0, 0.25),
+
+        inset 0 1px
+        rgba(255, 255, 255, 0.5);
+}
+
+.small-title {
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.7;
+
+    margin-bottom: 15px;
+}
+
+.hero-card h1 {
+
+    font-size:
+        clamp(40px, 8vw, 75px);
+
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+}
+
+.hero-card h1 span {
+
+    color: #8edcff;
+
+    text-shadow:
+        0 0 25px
+        rgba(100, 210, 255, 0.7);
+}
+
+.description {
+
+    max-width: 550px;
+
+    margin:
+        0 auto 30px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    opacity: 0.8;
+}
+
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.hero-button {
+
+    display: inline-block;
+
+    padding:
+        13px 22px;
+
+    color: white;
+
+    text-decoration: none;
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.3);
+
+    border-radius: 14px;
+
+    backdrop-filter:
+        blur(15px);
+
+    transition:
+        0.3s ease;
+}
+
+.hero-button:hover {
+
+    background:
+        rgba(255, 255, 255, 0.3);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* ========================================
+   HP
+======================================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+
+        top: 12px;
+
+        width: 92%;
+
+        min-height: 64px;
+
+        padding: 8px;
+
+        gap: 8px;
+
+        border-radius: 21px;
+    }
+
+    .logo {
+
+        padding: 0 7px;
+
+        font-size: 18px;
+    }
+
+    .search-box {
+
+        height: 44px;
+
+        padding: 0 10px;
+
+        border-radius: 14px;
+    }
+
+    .search-box span {
+
+        font-size: 23px;
+    }
+
+    .search-box input {
+
+        font-size: 14px;
+    }
+
+    .menu-button {
+
+        width: 46px;
+        height: 46px;
+
+        border-radius: 14px;
+    }
+
+    .nav-menu {
+
+        top: 72px;
+
+        right: 0;
+
+        width: 210px;
+    }
+
+    .hero {
+
+        padding-top: 120px;
+    }
+
+    .hero-card {
+
+        padding:
+            40px 22px;
+
+        border-radius: 25px;
+    }
+
+    .hero-card h1 {
+
+        font-size: 42px;
+    }
+
+    .description {
+
+        font-size: 15px;
+    }
+}
+/* =========================
+   FOTO PROFIL
+========================= */
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+
+    margin: 0 auto 25px;
+
+    padding: 6px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25),
+        inset 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+}
+/* =========================
+   SOCIAL MEDIA
+========================= */
+
+.social-item a {
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    font-size: 18px;
+
+    backdrop-filter: blur(10px);
+}
+
+.social-icon.instagram {
+    color: white;
+}
+
+.social-icon.youtube {
+    color: white;
+}
+
+.social-icon.tiktok {
+    color: white;
+}
+/* =========================
+   HALAMAN ANGGOTA
+========================= */
+
+.members-page {
+    width: min(1100px, 92%);
+
+    margin: auto;
+
+    padding:
+        140px 0 70px;
+}
+
+
+.members-header {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.members-header p {
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.6;
+
+    margin-bottom: 10px;
+}
+
+.members-header h1 {
+    font-size:
+        clamp(40px, 7vw, 65px);
+
+    margin-bottom: 10px;
+}
+
+.members-header span {
+    opacity: 0.65;
+}
+
+
+/* GRID */
+
+.members-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+/* KARTU */
+
+.member-card {
+    padding: 12px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.13);
+
+    backdrop-filter:
+        blur(25px);
+
+    -webkit-backdrop-filter:
+        blur(25px);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.25);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-6px);
+
+    background:
+        rgba(255, 255, 255, 0.2);
+}
+
+
+/* FOTO */
+
+.member-card img {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    display: block;
+
+    margin-bottom: 13px;
+}
+
+
+.member-card h3 {
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+
+.member-card p {
+    font-size: 12px;
+
+    opacity: 0.6;
+}
+
+
+/* HP */
+
+@media (max-width: 700px) {
+
+    .members-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .member-card {
+        padding: 9px;
+
+        border-radius: 19px;
+    }
+
+    .member-card img {
+        border-radius: 14px;
+    }
+
+}/* =========================
+   BACKGROUND SETIAP HALAMAN
+========================= */
+
+.home-page {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.15)
+        ),
+        url("toys.jpg");
+}
+
+
+.profil-page {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+        ),
+        url("bg-profil.jpg");
+}
+
+
+.anggota-page {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+        ),
+        url("bg-anggota.jpg");
+}
+
+
+.program-page {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+        ),
+        url("bg-program.jpg");
+}
+
+
+.kegiatan-page {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+        ),
+        url("bg-kegiatan.jpg");
+}
+
+
+.galeri-page {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+        ),
+        url("bg-galeri.jpg");
+}
+/* ========================================
+   POPUP ANGGOTA - LIQUID GLASS
+======================================== */
+
+.member-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.35);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+
+    z-index: 99999;
+}
+
+
+/* POPUP AKTIF */
+
+.member-modal.active {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* KARTU POPUP */
+
+.member-modal-card {
+
+    position: relative;
+
+    width: min(430px, 100%);
+
+    padding: 18px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.16);
+
+    backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.35);
+
+    border-radius: 30px;
+
+    box-shadow:
+
+        0 30px 80px
+        rgba(0, 0, 0, 0.35),
+
+        inset 0 1px
+        rgba(255, 255, 255, 0.6);
+
+    transform:
+        translateY(30px)
+        scale(0.92);
+
+    transition:
+        transform 0.4s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* ANIMASI MASUK */
+
+.member-modal.active
+.member-modal-card {
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* FOTO POPUP */
+
+.member-modal-card > img {
+
+    width: 180px;
+
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 24px;
+
+    display: block;
+
+    margin: 5px auto 20px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.35);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, 0.25);
+}
+
+
+/* TOMBOL X */
+
+.modal-close {
+
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    color: white;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    backdrop-filter:
+        blur(15px);
+
+    transition:
+        0.2s ease;
+}
+
+.modal-close:hover {
+
+    background:
+        rgba(255, 255, 255, 0.30);
+
+    transform:
+        scale(1.08);
+}
+
+
+/* JABATAN */
+
+.modal-content > p:first-child {
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    opacity: 0.6;
+
+    margin-bottom: 7px;
+}
+
+
+/* NAMA */
+
+.modal-content h2 {
+
+    font-size: 28px;
+
+    margin-bottom: 15px;
+}
+
+
+/* GARIS */
+
+.modal-line {
+
+    width: 45px;
+
+    height: 3px;
+
+    margin:
+        0 auto 15px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.6);
+}
+
+
+/* INFORMASI */
+
+#modalInfo {
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    opacity: 0.75;
+
+    margin: 0 !important;
+}
+
+
+/* HP */
+
+@media (max-width: 600px) {
+
+    .member-modal {
+
+        align-items: flex-end;
+
+        padding: 10px;
+    }
+
+    .member-modal-card {
+
+        width: 100%;
+
+        border-radius:
+            30px 30px 20px 20px;
+
+        transform:
+            translateY(100%);
+
+        transition:
+            transform 0.45s
+            cubic-bezier(.2,.8,.2,1);
+    }
+
+    .member-modal.active
+    .member-modal-card {
+
+        transform:
+            translateY(0);
+    }
+
+    .member-modal-card > img {
+
+        width: 150px;
+
+        height: 150px;
+    }
+
+}
